@@ -19,16 +19,23 @@ public class InputOutputGui {
     }
 
     public void startConversation() {
-
-        String fullName = JOptionPane.showInputDialog(FORMAT_ERROR_MESSAGGE);
+        boolean isError = false;
+        String lastName = "";
+        do{
+            isError = false;
+            String fullName = JOptionPane.showInputDialog(FORMAT_ERROR_MESSAGGE);
         try {
-            String lastName = nameService.extractLastName(fullName);
-            lName += lastName;
-            JOptionPane.showMessageDialog(null, lName);
+            lastName = nameService.extractLastName(fullName);
+            
+            
         } catch (CustomException exc) {
             JOptionPane.showMessageDialog(null, exc.getMessage());
+            isError = true;
         }
-
+}
+        while(isError);
+        lName += lastName;
+        JOptionPane.showMessageDialog(null, lName);
     }
 
 }
