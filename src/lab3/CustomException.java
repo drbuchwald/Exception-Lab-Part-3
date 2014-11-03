@@ -11,7 +11,7 @@ package lab3;
  */
 public class CustomException extends Exception {
 
-    public String exc = "";
+    public String exc = "My Custom Exception(Test)";
 
     public CustomException(String exc) {
         super(exc);
