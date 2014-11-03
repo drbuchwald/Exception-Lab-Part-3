@@ -13,7 +13,7 @@ public class NameService {
     public static final int MAX_LENGTH = 2;
     public static final int ZERO = 0;
     public static final String SPLIT_VALUE = " ";
-    public static final String ERROR_NEED_SPACE_BETWEEN_NAMES = "There must be a space between first and last name.";
+    public static final String ERROR_NEED_SPACE_BETWEEN_NAMES = "Please enter your first AND last names with a space inbeween.";
     public static final String ERROR_NO_NAME_ENTERED = "Name cannot be null";
     /**
      * Finds and returns the last name from within a full name. Caution: 
@@ -41,6 +41,7 @@ public class NameService {
     public String extractLastName(String fullName) throws CustomException {
 
         String lastName = "";
+                
         if (fullName.length() > ZERO) {
             String[] nameParts = fullName.split(SPLIT_VALUE);
             if (nameParts.length == MAX_LENGTH) {
@@ -51,6 +52,7 @@ public class NameService {
         } else {
             throw new CustomException(ERROR_NO_NAME_ENTERED);
         }
+        
         return lastName;
     }
      
