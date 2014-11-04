@@ -13,7 +13,7 @@ public class NameService {
     public static final int MAX_LENGTH = 2;
     public static final int ZERO = 0;
     public static final String SPLIT_VALUE = " ";
-    public static final String ERROR_NEED_SPACE_BETWEEN_NAMES = "Please enter your first AND last names with a space inbeween.";
+    public static final String ERROR_NAME_FORMAT = "Please enter your first AND last names with a space inbeween.";
     public static final String ERROR_NO_NAME_ENTERED = "Name cannot be null";
     /**
      * Finds and returns the last name from within a full name. Caution: 
@@ -47,7 +47,7 @@ public class NameService {
             if (nameParts.length == MAX_LENGTH) {
                 lastName = nameParts[nameParts.length - LAST_NAME_INDEX];
             } else {
-                throw new CustomException(ERROR_NEED_SPACE_BETWEEN_NAMES);
+                throw new CustomException(ERROR_NAME_FORMAT);
             }
         } else {
             throw new CustomException(ERROR_NO_NAME_ENTERED);
@@ -74,7 +74,7 @@ public class NameService {
             if (nameParts.length == MAX_LENGTH) {
                 firstName = nameParts[FIRST_NAME_INDEX];
             } else {
-                throw new CustomException(ERROR_NEED_SPACE_BETWEEN_NAMES);
+                throw new CustomException(ERROR_NAME_FORMAT);
             }
         } else {
             throw new CustomException(ERROR_NO_NAME_ENTERED);
